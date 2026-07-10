@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #050816;
+  --font-inter: "Inter";
+  --font-space-grotesk: "Space Grotesk";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(0, 71, 255, 0.25), transparent 34rem),
+    radial-gradient(circle at 85% 20%, rgba(0, 191, 255, 0.16), transparent 28rem),
+    #050816;
+  color: #ffffff;
+  font-family: var(--font-inter), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::selection {
+  background: rgba(0, 191, 255, 0.35);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    0 24px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: #00bfff;
+}
+
+.ambient-gradient {
+  background:
+    radial-gradient(circle at 10% 12%, rgba(0, 71, 255, 0.32), transparent 32rem),
+    radial-gradient(circle at 86% 18%, rgba(0, 191, 255, 0.22), transparent 30rem),
+    radial-gradient(circle at 50% 86%, rgba(0, 71, 255, 0.22), transparent 36rem),
+    linear-gradient(135deg, rgba(0, 71, 255, 0.05), rgba(0, 191, 255, 0.07), rgba(5, 8, 22, 0));
+  background-size: 180% 180%;
+}
+
+.cursor-glow {
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 260ms ease;
+  background:
+    radial-gradient(
+      420px circle at var(--cursor-x) var(--cursor-y),
+      rgba(0, 191, 255, 0.16),
+      rgba(0, 71, 255, 0.08) 32%,
+      transparent 68%
+    );
+  mix-blend-mode: screen;
+}
+
+.cursor-glow.is-visible {
+  opacity: 1;
+}
+
+.premium-surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.premium-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 191, 255, 0.18), transparent 38%),
+    linear-gradient(135deg, rgba(0, 71, 255, 0.16), transparent 58%);
+  opacity: 0;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.premium-surface:hover::before {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -70%;
+  width: 52%;
+  height: 320%;
+  transform: rotate(24deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transition: transform 700ms ease;
+}
+
+.sheen:hover::after {
+  transform: translateX(360%) rotate(24deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
