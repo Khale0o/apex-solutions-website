@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "APEX Solutions | Web, Mobile & AI Product Engineering",
+  title: "APEX Solutions ",
   description:
     "APEX Solutions builds scalable web, mobile, SaaS, and AI products for modern companies.",
   keywords: [

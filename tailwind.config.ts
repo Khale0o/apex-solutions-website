@@ -34,9 +34,14 @@ const config: Config = {
           "0%, 100%": { opacity: "0.45", transform: "translateX(0)" },
           "50%": { opacity: "1", transform: "translateX(8px)" },
         },
+        pulseDown: {
+          "0%, 100%": { opacity: "0.55", transform: "translateY(-2px)" },
+          "50%": { opacity: "1", transform: "translateY(4px)" },
+        },
       },
       animation: {
         "pulse-arrow": "pulseArrow 2s ease-in-out infinite",
+        "pulse-down": "pulseDown 1.8s ease-in-out infinite",
       },
     },
   },

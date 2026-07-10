@@ -149,6 +149,22 @@ textarea {
   transform: translateX(360%) rotate(24deg);
 }
 
+.splash-screen {
+  animation: splash-exit 1.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes splash-exit {
+  0%,
+  58% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
