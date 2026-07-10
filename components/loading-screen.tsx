@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function LoadingScreen() {
@@ -34,8 +35,15 @@ export function LoadingScreen() {
               transition={{ duration: 1.4, ease: "linear", repeat: Infinity }}
               className="absolute size-28 rounded-full border border-apex-cyan/30 border-t-apex-cyan shadow-glow"
             />
-            <div className="grid size-20 place-items-center rounded-full bg-white text-apex-night shadow-glow">
-              <span className="font-heading text-2xl font-bold">APEX</span>
+            <div className="grid size-24 place-items-center rounded-full shadow-glow">
+              <Image
+                src="/brand/apex-logo.png"
+                alt="APEX Solutions logo"
+                width={120}
+                height={120}
+                priority
+                className="h-full w-full rounded-full object-contain"
+              />
             </div>
             <motion.div
               initial={{ width: 0 }}

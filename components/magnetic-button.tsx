@@ -11,6 +11,8 @@ type MagneticButtonProps = {
   className?: string;
   type?: "button" | "submit";
   disabled?: boolean;
+  target?: string;
+  rel?: string;
 };
 
 const MotionLink = motion.create(Link);
@@ -21,6 +23,8 @@ export function MagneticButton({
   className,
   type = "button",
   disabled,
+  target,
+  rel,
 }: MagneticButtonProps) {
   const x = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 });
   const y = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 });
@@ -51,7 +55,7 @@ export function MagneticButton({
 
   if (href) {
     return (
-      <MotionLink href={href} whileTap={{ scale: 0.97 }} {...sharedProps}>
+      <MotionLink href={href} target={target} rel={rel} whileTap={{ scale: 0.97 }} {...sharedProps}>
         {content}
       </MotionLink>
     );

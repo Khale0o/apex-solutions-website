@@ -3,7 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { MagneticButton } from "@/components/magnetic-button";
+import { SocialLinks } from "@/components/social-links";
+import { whatsappUrl } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -22,11 +25,12 @@ export function Navbar() {
         aria-label="Primary navigation"
         className="glass mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between rounded-full px-5 shadow-[0_18px_80px_rgba(0,0,0,0.42)]"
       >
-        <Link href="#top" className="focus-ring group flex items-center gap-3 rounded-full">
-          <span className="grid size-9 place-items-center rounded-full bg-apex-blue shadow-glow transition duration-300 group-hover:scale-105 group-hover:bg-apex-cyan group-hover:text-apex-night">
-            <span className="font-heading text-base font-bold">A</span>
-          </span>
-          <span className="font-heading text-lg font-bold tracking-normal">APEX Solutions</span>
+        <Link href="#top" className="focus-ring group rounded-full">
+          <BrandLogo
+            priority
+            className="transition duration-300 group-hover:scale-[1.02]"
+            imageClassName="ring-1 ring-white/15"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -41,8 +45,14 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:block">
-          <MagneticButton href="#contact" className="min-h-10 px-5 py-2">
+        <div className="hidden items-center gap-3 md:flex">
+          <SocialLinks />
+          <MagneticButton
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-10 px-5 py-2"
+          >
             Start a project
           </MagneticButton>
         </div>
@@ -75,8 +85,11 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <SocialLinks showLabels className="mt-2 grid grid-cols-2 gap-2" iconClassName="justify-center rounded-md" />
           <Link
-            href="#contact"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="focus-ring sheen mt-2 rounded-md bg-apex-blue px-3 py-3 text-center text-sm font-semibold shadow-blue-glow"
           >

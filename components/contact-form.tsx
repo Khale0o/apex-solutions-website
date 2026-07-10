@@ -2,9 +2,11 @@
 
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Send } from "lucide-react";
+import { Mail, MessageCircle, Send } from "lucide-react";
 import { MagneticButton } from "@/components/magnetic-button";
 import { Reveal } from "@/components/reveal";
+import { SocialLinks } from "@/components/social-links";
+import { whatsappUrl } from "@/lib/brand";
 
 const emailConfig = {
   publicKey: "xZ77FASx4p7NnVQLo",
@@ -52,6 +54,18 @@ export function ContactForm() {
               Tell us about the product, timeline, and outcome you want. APEX will respond
               with a focused path forward.
             </p>
+            <div className="mt-8 flex flex-col gap-4">
+              <SocialLinks showLabels className="flex-wrap" />
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring sheen inline-flex w-fit items-center gap-2 rounded-full border border-apex-cyan/30 bg-apex-cyan/10 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-apex-cyan hover:shadow-glow"
+              >
+                <MessageCircle aria-hidden="true" className="size-4 text-apex-cyan" />
+                Start on WhatsApp
+              </a>
+            </div>
           </div>
         </Reveal>
 
