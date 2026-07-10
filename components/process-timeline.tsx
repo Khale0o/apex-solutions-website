@@ -36,7 +36,7 @@ export function ProcessTimeline() {
         <div className="mt-14 grid gap-5 lg:grid-cols-4">
           {steps.map((step, index) => (
             <Reveal key={step.title} delay={index * 0.08}>
-              <div className="glass relative h-full rounded-lg p-6">
+              <div className="glass premium-surface relative h-full rounded-lg p-6 transition duration-300 hover:-translate-y-1 hover:border-apex-cyan/45">
                 <div className="mb-8 flex items-center justify-between">
                   <span className="font-heading text-5xl font-bold text-white/14">
                     0{index + 1}

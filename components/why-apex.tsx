@@ -40,7 +40,7 @@ export function WhyApex() {
           </h2>
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="glass rounded-lg p-5">
+              <div key={stat.label} className="glass premium-surface rounded-lg p-5 transition duration-300 hover:-translate-y-1 hover:border-apex-cyan/45">
                 <div className="font-heading text-4xl font-bold text-white">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
@@ -55,9 +55,9 @@ export function WhyApex() {
             const Icon = reason.icon;
             return (
               <Reveal key={reason.title} delay={index * 0.08}>
-                <div className="glass rounded-lg p-6">
+                <div className="glass premium-surface group rounded-lg p-6 transition duration-300 hover:-translate-y-1 hover:border-apex-cyan/45">
                   <div className="flex gap-5">
-                    <div className="grid size-11 shrink-0 place-items-center rounded-lg bg-apex-cyan/12 text-apex-cyan">
+                    <div className="grid size-11 shrink-0 place-items-center rounded-lg bg-apex-cyan/12 text-apex-cyan shadow-[0_0_30px_rgba(0,191,255,0.14)] transition duration-300 group-hover:scale-105">
                       <Icon aria-hidden="true" className="size-5" />
                     </div>
                     <div>

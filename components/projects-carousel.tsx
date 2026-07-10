@@ -49,7 +49,7 @@ export function ProjectsCarousel() {
               type="button"
               aria-label="Previous project"
               onClick={() => move(-1)}
-              className="focus-ring grid size-12 place-items-center rounded-full border border-white/15 transition hover:border-apex-cyan hover:text-apex-cyan"
+              className="focus-ring sheen grid size-12 place-items-center rounded-full border border-white/15 bg-white/5 transition duration-300 hover:-translate-y-0.5 hover:border-apex-cyan hover:text-apex-cyan active:translate-y-0"
             >
               <ArrowLeft className="size-5" />
             </button>
@@ -57,7 +57,7 @@ export function ProjectsCarousel() {
               type="button"
               aria-label="Next project"
               onClick={() => move(1)}
-              className="focus-ring grid size-12 place-items-center rounded-full border border-white/15 transition hover:border-apex-cyan hover:text-apex-cyan"
+              className="focus-ring sheen grid size-12 place-items-center rounded-full border border-white/15 bg-white/5 transition duration-300 hover:-translate-y-0.5 hover:border-apex-cyan hover:text-apex-cyan active:translate-y-0"
             >
               <ArrowRight className="size-5 animate-pulse-arrow" />
             </button>
@@ -65,7 +65,7 @@ export function ProjectsCarousel() {
         </Reveal>
 
         <Reveal className="mt-12">
-          <div className="glass overflow-hidden rounded-lg">
+          <div className="glass premium-surface overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={project.name}
@@ -85,12 +85,12 @@ export function ProjectsCarousel() {
                       {project.description}
                     </p>
                   </div>
-                  <div className="mt-10 inline-flex w-fit rounded-full border border-apex-cyan/35 bg-apex-cyan/10 px-5 py-3 font-heading text-xl font-bold text-white">
+                  <div className="sheen mt-10 inline-flex w-fit rounded-full border border-apex-cyan/35 bg-apex-cyan/10 px-5 py-3 font-heading text-xl font-bold text-white shadow-[0_0_36px_rgba(0,191,255,0.16)]">
                     {project.metric}
                   </div>
                 </div>
 
-                <div className="relative min-h-72 overflow-hidden rounded-lg border border-white/12 bg-[#07102d]">
+                <div className="relative min-h-72 overflow-hidden rounded-lg border border-white/12 bg-[#07102d] transition duration-300 hover:border-apex-cyan/45 hover:shadow-glow">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,71,255,0.34),transparent_48%),radial-gradient(circle_at_70%_24%,rgba(0,191,255,0.32),transparent_28%)]" />
                   <div className="absolute left-8 right-8 top-8 h-16 rounded-lg border border-white/12 bg-white/10 backdrop-blur" />
                   <div className="absolute bottom-8 left-8 grid w-[46%] gap-3">

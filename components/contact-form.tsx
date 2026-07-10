@@ -40,8 +40,8 @@ export function ContactForm() {
     <section id="contact" className="py-24 sm:py-32">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <Reveal>
-          <div className="glass rounded-lg p-8">
-            <div className="grid size-12 place-items-center rounded-lg bg-apex-cyan/12 text-apex-cyan">
+          <div className="glass premium-surface rounded-lg p-8">
+            <div className="grid size-12 place-items-center rounded-lg bg-apex-cyan/12 text-apex-cyan shadow-[0_0_32px_rgba(0,191,255,0.14)]">
               <Mail aria-hidden="true" className="size-6" />
             </div>
             <p className="mt-8 text-sm font-semibold uppercase text-apex-cyan">Contact</p>
@@ -56,7 +56,7 @@ export function ContactForm() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <form ref={formRef} onSubmit={onSubmit} className="glass rounded-lg p-6 sm:p-8">
+          <form ref={formRef} onSubmit={onSubmit} className="glass premium-surface rounded-lg p-6 sm:p-8">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-medium text-white/78">
                 Name
@@ -64,7 +64,7 @@ export function ContactForm() {
                   required
                   name="from_name"
                   autoComplete="name"
-                  className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38"
+                  className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38 transition duration-300 hover:border-white/24 focus:border-apex-cyan"
                   placeholder="Your name"
                 />
               </label>
@@ -75,7 +75,7 @@ export function ContactForm() {
                   type="email"
                   name="reply_to"
                   autoComplete="email"
-                  className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38"
+                  className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38 transition duration-300 hover:border-white/24 focus:border-apex-cyan"
                   placeholder="you@company.com"
                 />
               </label>
@@ -86,7 +86,7 @@ export function ContactForm() {
               <input
                 required
                 name="project_type"
-                className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38"
+                className="focus-ring min-h-12 rounded-md border border-white/14 bg-white/7 px-4 text-white placeholder:text-white/38 transition duration-300 hover:border-white/24 focus:border-apex-cyan"
                 placeholder="Web app, SaaS, mobile, AI system..."
               />
             </label>
@@ -97,7 +97,7 @@ export function ContactForm() {
                 required
                 name="message"
                 rows={6}
-                className="focus-ring resize-none rounded-md border border-white/14 bg-white/7 px-4 py-3 text-white placeholder:text-white/38"
+                className="focus-ring resize-none rounded-md border border-white/14 bg-white/7 px-4 py-3 text-white placeholder:text-white/38 transition duration-300 hover:border-white/24 focus:border-apex-cyan"
                 placeholder="What are you building?"
               />
             </label>

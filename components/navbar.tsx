@@ -20,10 +20,10 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 px-4">
       <nav
         aria-label="Primary navigation"
-        className="glass mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between rounded-full px-5"
+        className="glass mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between rounded-full px-5 shadow-[0_18px_80px_rgba(0,0,0,0.42)]"
       >
-        <Link href="#top" className="focus-ring flex items-center gap-3 rounded-full">
-          <span className="grid size-9 place-items-center rounded-full bg-apex-blue shadow-glow">
+        <Link href="#top" className="focus-ring group flex items-center gap-3 rounded-full">
+          <span className="grid size-9 place-items-center rounded-full bg-apex-blue shadow-glow transition duration-300 group-hover:scale-105 group-hover:bg-apex-cyan group-hover:text-apex-night">
             <span className="font-heading text-base font-bold">A</span>
           </span>
           <span className="font-heading text-lg font-bold tracking-normal">APEX Solutions</span>
@@ -34,7 +34,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="focus-ring rounded-full text-sm text-white/72 transition hover:text-white"
+              className="focus-ring rounded-full px-3 py-2 text-sm text-white/72 transition duration-300 hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </Link>
@@ -52,7 +52,7 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((current) => !current)}
-          className="focus-ring grid size-10 place-items-center rounded-full border border-white/15 md:hidden"
+          className="focus-ring grid size-10 place-items-center rounded-full border border-white/15 transition hover:border-apex-cyan hover:text-apex-cyan md:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -70,7 +70,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="focus-ring rounded-md px-3 py-3 text-sm text-white/78"
+              className="focus-ring rounded-md px-3 py-3 text-sm text-white/78 transition hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </Link>
@@ -78,7 +78,7 @@ export function Navbar() {
           <Link
             href="#contact"
             onClick={() => setOpen(false)}
-            className="focus-ring mt-2 rounded-md bg-apex-blue px-3 py-3 text-center text-sm font-semibold"
+            className="focus-ring sheen mt-2 rounded-md bg-apex-blue px-3 py-3 text-center text-sm font-semibold shadow-blue-glow"
           >
             Start a project
           </Link>
